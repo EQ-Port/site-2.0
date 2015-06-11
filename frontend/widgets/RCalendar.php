@@ -1,7 +1,7 @@
 <?php
 namespace frontend\widgets;
 
-use frontend\models\RockCalendar;
+use common\models\RockCalendar;
 
 class RCalendar extends \yii\bootstrap\Widget
 {	
