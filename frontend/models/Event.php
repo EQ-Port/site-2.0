@@ -3,15 +3,15 @@ namespace frontend\models;
 
 class Event extends \yii\db\ActiveRecord
 {
-	const EVENT_CONCERT 		= 1; //Концерты
-	const EVENT_FESTIVALS 		= 2; //Фестивали
-	const EVENT_MASTER_CLASSES 	= 4; //Мастер-классы
-	const EVENT_PRESENTATION	= 8; //Презентации альбомов
-	const EVENT_PARTY			= 16; //Вечеринки
-	const EVENT_AUTOGRAPH		= 32; //Автограф-сессии
+	const EVENT_CONCERT 		= 1; //РљРѕРЅС†РµСЂС‚С‹
+	const EVENT_FESTIVALS 		= 2; //Р¤РµСЃС‚РёРІР°Р»Рё
+	const EVENT_MASTER_CLASSES 	= 4; //РњР°СЃС‚РµСЂ-РєР»Р°СЃСЃС‹
+	const EVENT_PRESENTATION	= 8; //РџСЂРµР·РµРЅС‚Р°С†РёРё Р°Р»СЊР±РѕРјРѕРІ
+	const EVENT_PARTY			= 16; //Р’РµС‡РµСЂРёРЅРєРё
+	const EVENT_AUTOGRAPH		= 32; //РђРІС‚РѕРіСЂР°С„-СЃРµСЃСЃРёРё
 	const EVENT_OPEN_AIR		= 48; //Open Air
-	const EVENT_ONLINE			= 64; //On-line концерт
-	const EVENT_ROCK_QUEST		= 80; //Рок-квесты
+	const EVENT_ONLINE			= 64; //On-line РєРѕРЅС†РµСЂС‚
+	const EVENT_ROCK_QUEST		= 80; //Р РѕРє-РєРІРµСЃС‚С‹
 	
     public static function model($className=__CLASS__)
     {
