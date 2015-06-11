@@ -7,7 +7,6 @@ class RockCalendar extends \yii\db\ActiveRecord
     {
         return parent::model($className);
     }
-
     public static function tableName()
     {
         return 'calendar';
