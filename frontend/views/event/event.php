@@ -1,7 +1,3 @@
-<?php 
-use frontend\widgets\RCalendar;
-?>
-<h3><? echo RCalendar::widget(); ?></h3>
 <h1><? echo $self['name']; ?></h1>
 <pre>
 <?
