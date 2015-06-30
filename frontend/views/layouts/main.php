@@ -18,34 +18,38 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) . ' | ' . Yii::$app->name ?></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
 <header>
-    <div class="wrapper">
-        <div class="logo"><a href="/" title="На главную"></a></div>
-        <div class="user">
-            <div class="profile">
-                <img src="images/users/b4c1bd0f111cd49b0164741b917f7589.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <div class="logo"><a href="/" title="На главную"></a></div>
+            </div>
+            <div class="col-md-2 col-md-offset-7 col-xs-12">
+                <div class="user">
+                    <div class="profile">
+                        <img src="http://blackforest.su/sites/default/files/default_avatar.png">
 
-                <div class="more">
-                    <ul>
-                        <li><a href="#">Профиль</a></li>
-                        <li><a href="#">Настройки</a></li>
-                        <li><a href="#">Выйти</a></li>
-                    </ul>
+                        <div class="more">
+                            <ul>
+                                <li><a href="#">Профиль</a></li>
+                                <li><a href="#">Настройки</a></li>
+                                <li><a href="#">Выйти</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <audio controls>
-                <source src="http://dl.zaycev.net/75549/3085770/nickelback_-_get_em_up_(zaycev.net).mp3"
-                        type="audio/mpeg">
-            </audio>
         </div>
     </div>
 </header>
 <nav>
-    <div class="wrapper">
+    <div class="container">
         <form class="search">
             <input type="search" placeholder="поиск" autocomplete="off"/>
         </form>
@@ -56,32 +60,40 @@ AppAsset::register($this);
                 array('label' => 'Contact', 'url' => array('/site/contact')),
                 array('label' => 'Login', 'url' => array('/site/login')),
             ),
-            'options' => array('class' => 'menu'),
+            'options' => array('class' => 'menu nav'),
         )) ?>
     </div>
 </nav>
-<div class="wrapper">
-    <aside class="leftbar">
-        <div class="navigation">
-            <h3>Навигация</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <aside class="leftbar">
+                <div class="navigation">
+                    <h3>Навигация</h3>
+                </div>
+                <div class="face">
+                    <h3>Наши лица</h3>
+                </div>
+            </aside>
         </div>
-        <div class="face">
-            <h3>Наши лица</h3>
-        </div>
-    </aside>
-    <div class="content">
-        <?php if (isset($this->breadcrumbs)): ?>
-            <?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
+        <div class="col-xs-12 col-md-9">
+            <div class="content">
+                <?php if (isset($this->breadcrumbs)): ?>
+                    <?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
                 'links' => $this->breadcrumbs,
             )); */?><!-- breadcrumbs -->
-        <?php endif ?>
+                <?php endif ?>
 
-        <?php echo $content; ?>
+                <?php echo $content; ?>
+            </div>
+        </div>
     </div>
+
+
 </div>
 <div class="clearfix"></div>
 <footer>
-    <div class="wrapper">
+    <div class="container">
         <small id="copyright">© Радио EQUILIBRIUM 2009 - <?= date('Y') ?></small>
     </div>
 </footer>
