@@ -35,11 +35,12 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'passwordHash', 'email'], 'required'],
+            [['username', 'email'], 'required'],
             [['username'], 'unique'],
             [['status'], 'integer'],
             [['username', 'passwordHash', 'passwordResetToken', 'email'], 'string', 'max' => 255],
-            [['firstName', 'lastName'], 'string', 'max' => 50]
+            [['firstName', 'lastName'], 'string', 'max' => 50],
+            [['passwordHash'], 'safe'],
         ];
     }
 
@@ -49,14 +50,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function attributeLabels()
     {
         return [
-            'id'                 => 'ID',
-            'username'           => 'Username',
-            'firstName'          => 'First Name',
-            'lastName'           => 'Last Name',
-            'passwordHash'       => 'Password Hash',
-            'passwordResetToken' => 'Password Reset Token',
-            'email'              => 'Email',
-            'status'             => 'Status',
+            'id'                 => Yii::t('app', 'ID'),
+            'username'           => Yii::t('app', 'Username'),
+            'firstName'          => Yii::t('app', 'First Name'),
+            'lastName'           => Yii::t('app', 'Last Name'),
+            'passwordHash'       => Yii::t('app', 'Password Hash'),
+            'passwordResetToken' => Yii::t('app', 'Password Reset Token'),
+            'email'              => Yii::t('app', 'Email'),
+            'status'             => Yii::t('app', 'Status'),
         ];
     }
 

@@ -1,50 +1,49 @@
 <?php
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Админка EQ';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Поздравляем!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
-
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p class="lead">Вы в числе избранных. Здесь происходит управление всеми ресурсами эквилибриума.</p>
     </div>
 
     <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Статьи</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>Статьи - это основной контент, который не только несёт полезную информацию нашим посетителям, но
+                    и поднимает наш сайт в выдачев поисковых систем. Убедительная просьба уделять особое внимание
+                    орфографии, стилистике и, конечно, уникальности текста. И не забывайте о лаконичном форматировании,
+                    не
+                    играйте со шрифтами и размерами.
+                </p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                <p><a class="btn btn-default" href="https://www.etxt.ru/antiplagiat/" target="_blank">Антиплагиат »</a>
+                </p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Мероприятия</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <p>В этом разделе мы размещаем анонсы различных событий в мире рок-музыки и с тематикой близкой к этому.
+                    Размещайте здесь только информацию о реально запланированных мероприятиях, предварительно проверяя
+                    достоверность предоставленных вам данных. И всё ещё не забываем об уникальности контента
+                </p>
             </div>
             <div class="col-lg-4">
-                <h2>Heading</h2>
+                <h2>Последнее напутствие</h2>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
+                <p>
+                    Если уж вы оказались здесь, значит вам оказана честь творить историю нашего ресурса вместе с нами.
+                    Не пытайтесь кого-то оскорбить или дискредитировать с помощью вашего контента. Нам не нужны конфликтные
+                    ситуации. Поэтому: пис, братья и да прибудет с вами сила!
+                </p>
+                </p>
             </div>
         </div>
 
