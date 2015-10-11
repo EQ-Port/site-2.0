@@ -6,7 +6,7 @@ use common\helpers\TextHelper;
 use Yii;
 use common\models\User;
 use yii\data\ActiveDataProvider;
-use yii\web\Controller;
+use backend\components\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -17,14 +17,17 @@ class UserController extends Controller
 {
     public function behaviors()
     {
-        return [
-            'verbs' => [
-                'class'   => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+        return array_merge(
+            parent::behaviors(),
+            [
+                'verbs' => [
+                    'class'   => VerbFilter::className(),
+                    'actions' => [
+                        'delete' => ['POST'],
+                    ],
                 ],
-            ],
-        ];
+            ]
+        );
     }
 
     /**
@@ -72,8 +75,8 @@ class UserController extends Controller
         $model = new User();
 
         if ($model->load(Yii::$app->request->post())) {
-            $salt                = TextHelper::getRandomString(8);
-            $model->passwordHash = $salt . md5($salt . $model->passwordHash);
+            $salt                      = TextHelper::getRandomString(8);
+            $model->passwordHash       = $salt . md5($salt . $model->passwordHash);
             $model->passwordResetToken = md5(TextHelper::getRandomString(100));
 
             if ($model->save()) {
