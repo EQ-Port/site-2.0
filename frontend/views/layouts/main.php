@@ -1,10 +1,6 @@
 <?php
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
-use frontend\widgets\Alert;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
@@ -53,39 +49,39 @@ AppAsset::register($this);
         <form class="search">
             <input type="search" placeholder="поиск" autocomplete="off"/>
         </form>
-        <?= \yii\widgets\Menu::widget(array(
-            'items'       => array(
-                array('label' => 'Home', 'url' => array('/site/index')),
-                array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
-                array('label' => 'Contact', 'url' => array('/site/contact')),
-                array('label' => 'Login', 'url' => array('/site/login')),
-            ),
-            'options' => array('class' => 'menu nav'),
-        )) ?>
+        <?=
+        \yii\widgets\Menu::widget(
+            array(
+                'items'   => array(
+                    array('label' => 'Home', 'url' => array('/site/index')),
+                    array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
+                    array('label' => 'Contact', 'url' => array('/site/contact')),
+                    array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::$app->user->isGuest),
+                ),
+                'options' => array('class' => 'menu nav'),
+            )
+        ) ?>
     </div>
 </nav>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-md-3">
-            <aside class="leftbar">
-                <div class="navigation">
-                    <h3>Навигация</h3>
-                </div>
-                <div class="face">
-                    <h3>Наши лица</h3>
-                </div>
-            </aside>
-        </div>
-        <div class="col-xs-12 col-md-9">
-            <div class="content">
-                <?php if (isset($this->breadcrumbs)): ?>
-                    <?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
-                'links' => $this->breadcrumbs,
-            )); */?><!-- breadcrumbs -->
-                <?php endif ?>
-
-                <?php echo $content; ?>
+        <div class="col-xs-12 col-md-3" style="margin-top: 30px;">
+            <div class="col-md-12 navigation">
+                <h4>Навигация</h4>
             </div>
+            <div class="col-md-12 face">
+                <h4>Наши лица</h4>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-9 content">
+            <?php if (isset($this->breadcrumbs)): ?>
+                <?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
+                'links' => $this->breadcrumbs,
+            )); */
+                ?><!-- breadcrumbs -->
+            <?php endif ?>
+
+            <?php echo $content; ?>
         </div>
     </div>
 

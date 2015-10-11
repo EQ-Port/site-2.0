@@ -48,14 +48,14 @@ class Article extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
-            'previewText' => 'Preview Text',
-            'fullText' => 'Full Text',
-            'active' => 'Active',
-            'activeFrom' => 'Active From',
-            'activeTo' => 'Active To',
-            'authorId' => 'Author ID',
+            'id'          => 'ID',
+            'name'        => 'Заголовок',
+            'previewText' => 'Лид',
+            'fullText'    => 'Полный текст',
+            'active'      => 'Опубликован',
+            'activeFrom'  => 'Дата начала публикации',
+            'activeTo'    => 'Дата окончания публикации',
+            'authorId'    => 'Автор',
         ];
     }
 

@@ -49,14 +49,14 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'username' => 'Username',
-            'firstName' => 'First Name',
-            'lastName' => 'Last Name',
-            'passwordHash' => 'Password Hash',
+            'id'                 => 'ID',
+            'username'           => 'Username',
+            'firstName'          => 'First Name',
+            'lastName'           => 'Last Name',
+            'passwordHash'       => 'Password Hash',
             'passwordResetToken' => 'Password Reset Token',
-            'email' => 'Email',
-            'status' => 'Status',
+            'email'              => 'Email',
+            'status'             => 'Status',
         ];
     }
 
@@ -91,7 +91,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public static function findIdentity($id)
     {
-        // TODO: Implement findIdentity() method.
+        return self::findOne(['id' => $id]);
     }
 
     /**
@@ -149,4 +149,5 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function validateAuthKey($authKey)
     {
         // TODO: Implement validateAuthKey() method.
-}}
+    }
+}

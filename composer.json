@@ -18,7 +18,9 @@
         "yiisoft/yii2": "*",
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
-        "nizsheanez/yii2-asset-converter":"1.*"
+        "nizsheanez/yii2-asset-converter":"1.*",
+        "2amigos/yii2-ckeditor-widget": "*",
+        "2amigos/yii2-date-time-picker-widget": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
