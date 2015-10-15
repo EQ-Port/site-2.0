@@ -4,6 +4,7 @@ namespace backend\components;
 
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\Json;
 
 
 class Controller extends \yii\web\Controller
@@ -22,13 +23,19 @@ class Controller extends \yii\web\Controller
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'index'],
+                        'actions' => ['index', 'create', 'update', 'view', 'delete'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
                 ],
             ],
         ];
+    }
+
+    protected function jsonResponse($data)
+    {
+        echo Json::encode($data);
+        die;
     }
 }
  

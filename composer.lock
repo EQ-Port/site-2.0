@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1f015dae4ad9accce6b0e2ba822fae5a",
-    "content-hash": "a5ee2206c7107784d47748b657fcdf2e",
+    "hash": "406123369c4af3de9c0da1826420f618",
+    "content-hash": "783565b7ec9a6c80da4dbcc716fcb248",
     "packages": [
         {
             "name": "2amigos/yii2-ckeditor-widget",
@@ -1149,6 +1149,48 @@
             "time": "2015-09-04 05:47:20"
         },
         {
+            "name": "troy/yii2-image-upload",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lygfanye/yii2-image-upload.git",
+                "reference": "1efa129d2488258fc6b3fee58f42302b39e017cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lygfanye/yii2-image-upload/zipball/1efa129d2488258fc6b3fee58f42302b39e017cc",
+                "reference": "1efa129d2488258fc6b3fee58f42302b39e017cc",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "troy\\ImageUpload\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "troyfan",
+                    "email": "fan_ye@hotmail.com"
+                }
+            ],
+            "description": "upload image via ajax",
+            "keywords": [
+                "ajax",
+                "extension",
+                "image-upload",
+                "yii2"
+            ],
+            "time": "2014-12-17 03:01:02"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
@@ -1158,7 +1200,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2cb531e0a7ba1d34957557ae1f72b6fb39cc1df3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/195f748dafea46ee84ecec08342ddef31b49ae79",
                 "reference": "2cb531e0a7ba1d34957557ae1f72b6fb39cc1df3",
                 "shasum": ""
             },
@@ -1423,7 +1465,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/5c3fa245495903957df6737347cce04d0919a781",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/9198c2f7668b9ee494959f8ff7f5f6e6f65379ca",
                 "reference": "5c3fa245495903957df6737347cce04d0919a781",
                 "shasum": ""
             },
@@ -1692,7 +1734,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "troy/yii2-image-upload": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
 use dosamigos\datetimepicker\DateTimePicker;
+use \dosamigos\fileupload\FileUploadUI;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Article */
@@ -20,6 +21,12 @@ use dosamigos\datetimepicker\DateTimePicker;
 
     <?= $form->field($model, 'fullText')->widget(CKEditor::className(), [
             'preset' => 'full'
+        ]) ?>
+
+    <?= \common\widgets\ImagePreview\ImagePreviewWidget::widget([
+            'model'     => $model,
+            'attribute' => 'imageId',
+            'source' => (!is_null($model->image)) ? $model->image : null,
         ]) ?>
 
     <?= $form->field($model, 'active')->checkbox() ?>

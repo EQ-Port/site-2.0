@@ -15,8 +15,10 @@ use Yii;
  * @property string $activeFrom
  * @property string $activeTo
  * @property integer $authorId
+ * @property integer $imageId
  *
  * @property User $author
+ * @property Image $image
  */
 class Article extends \yii\db\ActiveRecord
 {
@@ -37,6 +39,7 @@ class Article extends \yii\db\ActiveRecord
             [['previewText'], 'required'],
             [['previewText', 'fullText'], 'string'],
             [['active', 'authorId'], 'integer'],
+            [['imageId'], 'integer', 'skipOnEmpty' => true],
             [['activeFrom', 'activeTo'], 'safe'],
             [['name'], 'string', 'max' => 255]
         ];
@@ -56,6 +59,7 @@ class Article extends \yii\db\ActiveRecord
             'activeFrom'  => 'Дата начала публикации',
             'activeTo'    => 'Дата окончания публикации',
             'authorId'    => 'Автор',
+            'imageId'     => 'Картинка',
         ];
     }
 
@@ -65,5 +69,13 @@ class Article extends \yii\db\ActiveRecord
     public function getAuthor()
     {
         return $this->hasOne(User::className(), ['id' => 'authorId']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImage()
+    {
+        return $this->hasOne(Image::className(), ['id' => 'imageId']);
     }
 }

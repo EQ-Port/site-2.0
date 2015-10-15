@@ -33,10 +33,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'previewText:ntext',
             'fullText:ntext',
             'active',
-            'activeFrom',
-            'activeTo',
-            'authorId',
-        ],
+            'activeFrom:datetime',
+            'activeTo:datetime',
+            'author.username',
+            [
+                'label' => Yii::t('app', 'Image'),
+                'format' => 'image',
+                'value' => !is_null($model->image) ? $model->image->fit(300, 1000)->getUrl() : null,
+            ]
+        ]
     ]) ?>
 
 </div>

@@ -24,4 +24,6 @@ return [
     'Password Hash'        => 'Пароль',
     'Create User'          => 'Новый пользователь',
     'Delete'               => 'Удалить',
+    'Path'                 => 'Путь',
+    'Image'                => 'Изображение',
 ];
