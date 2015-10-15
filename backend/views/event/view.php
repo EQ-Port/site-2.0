@@ -31,7 +31,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'code',
-            'type',
+            [
+                'label' => Yii::t('app', 'Poster'),
+                'format' => 'image',
+                'value' => !is_null($model->poster) ? $model->poster->fit(300, 1000)->getUrl() : null,
+            ],
+            [
+                'label' => Yii::t('app', 'Type'),
+                'format' => 'text',
+                'value' => \common\models\Event::typeList()[$model->type],
+            ],
             'description',
             'startDate',
             'endDate',

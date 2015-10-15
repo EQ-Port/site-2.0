@@ -18,6 +18,12 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
 
+    <?= \common\widgets\ImagePreview\ImagePreviewWidget::widget([
+            'model'     => $model,
+            'attribute' => 'posterId',
+            'source' => (!is_null($model->poster)) ? $model->poster : null,
+        ]) ?>
+
     <?= $form->field($model, 'type')->dropDownList(\common\models\Event::typeList()) ?>
 
     <?= $form->field($model, 'description')->widget(CKEditor::className(), ['preset' => 'full']) ?>

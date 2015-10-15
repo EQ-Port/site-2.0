@@ -16,8 +16,10 @@ use yii\web\IdentityInterface;
  * @property string $passwordResetToken
  * @property string $email
  * @property integer $status
+ * @property integer $avatarId
  *
  * @property Article[] $articles
+ * @property Image $avatar
  */
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
@@ -58,6 +60,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'passwordResetToken' => Yii::t('app', 'Password Reset Token'),
             'email'              => Yii::t('app', 'Email'),
             'status'             => Yii::t('app', 'Status'),
+            'avatar'             => Yii::t('app', 'Avatar'),
         ];
     }
 
@@ -150,5 +153,10 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function validateAuthKey($authKey)
     {
         // TODO: Implement validateAuthKey() method.
+    }
+
+    public function getAvatar()
+    {
+        return $this->hasOne(Image::className(), ['id' => 'avatarId']);
     }
 }

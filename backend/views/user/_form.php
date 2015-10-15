@@ -18,6 +18,12 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'lastName')->textInput(['maxlength' => true]) ?>
 
+    <?= \common\widgets\ImagePreview\ImagePreviewWidget::widget([
+            'model'     => $model,
+            'attribute' => 'avatarId',
+            'source' => (!is_null($model->avatar)) ? $model->avatar : null,
+        ]) ?>
+
     <?= $form->field($model, 'passwordHash')->passwordInput() ?>
 
     <?= $form->field($model, 'passwordResetToken')->textInput(['maxlength' => true, 'disabled' => true]) ?>

@@ -16,6 +16,9 @@ use Yii;
  * @property string $endDate
  * @property string $place
  * @property string $address
+ * @property integer $posterId
+ *
+ * @property Image $poster
  */
 class Event extends \yii\db\ActiveRecord
 {
@@ -61,6 +64,7 @@ class Event extends \yii\db\ActiveRecord
             [['name', 'code', 'type', 'description', 'startDate', 'place', 'address'], 'required'],
             [['type'], 'integer'],
             [['startDate', 'endDate'], 'safe'],
+            [['posterId'], 'integer', 'skipOnEmpty' => true],
             [['name', 'code'], 'string', 'max' => 100],
             [['place', 'address'], 'string', 'max' => 150],
         ];
@@ -81,6 +85,12 @@ class Event extends \yii\db\ActiveRecord
             'endDate'     => Yii::t('app', 'End Date'),
             'place'       => Yii::t('app', 'Place'),
             'address'     => Yii::t('app', 'Address'),
+            'posterId'    => Yii::t('app', 'Poster'),
         ];
+    }
+
+    public function getPoster()
+    {
+        return $this->hasOne(Image::className(), ['id' => 'posterId']);
     }
 }
