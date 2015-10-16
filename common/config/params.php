@@ -3,5 +3,5 @@ return [
     'adminEmail' => 'admin@example.com',
     'supportEmail' => 'support@example.com',
     'user.passwordResetTokenExpire' => 3600,
-    'staticUrl' => 'http://static.eq-port.com',
+    'staticUrl' => 'http://storage.eq-port.com',
 ];
