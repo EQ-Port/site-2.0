@@ -36,6 +36,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'passwordResetToken',
             'email:email',
             'status',
+            [
+                'label' => Yii::t('app', 'Avatar'),
+                'format' => 'image',
+                'value' => !is_null($model->avatar) ? $model->avatar->crop(100, 100)->getUrl() : null
+            ]
         ],
     ]) ?>
 

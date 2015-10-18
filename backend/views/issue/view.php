@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Article */
+/* @var $model common\models\Issue */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Articles'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Issues'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="article-view">
+<div class="issue-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -30,21 +30,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'name',
-            'previewText:ntext',
-            'fullText:ntext',
-            'active',
-            'activeFrom:datetime',
-            'activeTo:datetime',
+            'code',
             [
-                'label' => Yii::t('app', 'Author'),
-                'value' => $model->author->firstName . ' ' . $model->author->lastName
-            ],
-            [
-                'label' => Yii::t('app', 'Image'),
+                'label' => Yii::t('app', 'Cover'),
                 'format' => 'image',
-                'value' => !is_null($model->image) ? $model->image->fit(300, 1000)->getUrl() : null,
-            ]
-        ]
+                'value' => !is_null($model->cover) ? $model->cover->fit(300, 1000)->getUrl() : null
+            ],
+            'announceDate',
+            'publishDate',
+            'lead:html',
+        ],
     ]) ?>
 
 </div>

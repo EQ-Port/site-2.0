@@ -21,7 +21,7 @@
         "nizsheanez/yii2-asset-converter":"1.*",
         "2amigos/yii2-ckeditor-widget": "*",
         "2amigos/yii2-date-time-picker-widget": "~1.0",
-        "2amigos/yii2-file-upload-widget": "~1.0"
+        "2amigos/yii2-date-picker-widget": "~1.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

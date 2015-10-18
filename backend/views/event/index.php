@@ -25,11 +25,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'name',
             'code',
-            'type',
-            'description',
-            // 'startDate',
-            // 'endDate',
-            // 'place',
+            [
+                'attribute' => 'type',
+                'value' => function($model) {
+                        return \common\models\Event::typeList()[$model->type];
+                    }
+            ],
+            [
+                'attribute' => 'poster',
+                'label' => Yii::t('app', 'Poster'),
+                'format' => 'raw',
+                'value' => function($model) {
+                        return !is_null($model->poster) ? Html::img($model->poster->fit(120, 1000)->getUrl()) : null;
+                    }
+            ],
+            'startDate:datetime',
+            'endDate:datetime',
+            'place',
             // 'address',
 
             ['class' => 'yii\grid\ActionColumn'],

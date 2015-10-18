@@ -61,7 +61,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'passwordResetToken' => Yii::t('app', 'Password Reset Token'),
             'email'              => Yii::t('app', 'Email'),
             'status'             => Yii::t('app', 'Status'),
-            'avatar'             => Yii::t('app', 'Avatar'),
+            'avatarId'           => Yii::t('app', 'Avatar'),
         ];
     }
 
