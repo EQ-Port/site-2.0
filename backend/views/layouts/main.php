@@ -36,6 +36,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('app', 'Events'), 'url' => ['/event/index'], 'active' => Yii::$app->controller->id == 'event'],
                 ['label' => Yii::t('app', 'Issues'), 'url' => ['/issue/index'], 'active' => Yii::$app->controller->id == 'issue'],
                 ['label' => Yii::t('app', 'Users'), 'url' => ['/user/index'], 'active' => Yii::$app->controller->id == 'user'],
+                ['label' => Yii::t('app', 'Calendar'), 'url' => ['/calendar-event/index'], 'active' => Yii::$app->controller->id == 'calendarEvent'],
             ];
             if (Yii::$app->user->isGuest) {
                 $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
