@@ -53,7 +53,7 @@ AppAsset::register($this);
         \yii\widgets\Menu::widget(
             array(
                 'items'   => array(
-                    array('label' => 'Home', 'url' => array('/site/index')),
+                    array('label' => 'Статьи', 'url' => array('/article')),
                     array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
                     array('label' => 'Contact', 'url' => array('/site/contact')),
                     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::$app->user->isGuest),
@@ -65,14 +65,6 @@ AppAsset::register($this);
 </nav>
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-md-3" style="margin-top: 30px;">
-            <div class="col-md-12 navigation">
-                <h4>Навигация</h4>
-            </div>
-            <div class="col-md-12 face">
-                <h4>Наши лица</h4>
-            </div>
-        </div>
         <div class="col-xs-12 col-md-9 content">
             <?php if (isset($this->breadcrumbs)): ?>
                 <?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
@@ -82,6 +74,14 @@ AppAsset::register($this);
             <?php endif ?>
 
             <?php echo $content; ?>
+        </div>
+        <div class="col-xs-12 col-md-3" style="margin-top: 30px;">
+            <div class="col-md-12 navigation">
+                <h4>Навигация</h4>
+            </div>
+            <div class="col-md-12 face">
+                <h4>Наши лица</h4>
+            </div>
         </div>
     </div>
 

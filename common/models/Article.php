@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
+ * @property string $code
  * @property string $previewText
  * @property string $fullText
  * @property integer $active
@@ -38,10 +39,12 @@ class Article extends \yii\db\ActiveRecord
         return [
             [['previewText'], 'required'],
             [['previewText', 'fullText'], 'string'],
+            [['code'], 'unique'],
+            [['code'], 'match', 'pattern' => '/[a-z0-9_-]/'],
             [['active', 'authorId'], 'integer'],
             [['imageId'], 'integer', 'skipOnEmpty' => true],
             [['activeFrom', 'activeTo'], 'safe'],
-            [['name'], 'string', 'max' => 255]
+            [['name', 'code'], 'string', 'max' => 255]
         ];
     }
 
@@ -53,6 +56,7 @@ class Article extends \yii\db\ActiveRecord
         return [
             'id'          => 'ID',
             'name'        => 'Заголовок',
+            'code'        => Yii::t('app', 'Code'),
             'previewText' => 'Лид',
             'fullText'    => 'Полный текст',
             'active'      => 'Опубликован',

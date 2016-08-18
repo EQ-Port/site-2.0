@@ -40,4 +40,5 @@ return [
     'Create Calendar Event' => 'Новое календарное событие',
     'Calendar Events'       => 'Календарные события',
     'Date'                  => 'Дата',
+    'Roles'                 => 'Роли',
 ];

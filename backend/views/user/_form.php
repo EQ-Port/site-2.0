@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\widgets\BitMask\BitMask;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
@@ -23,6 +24,8 @@ use yii\widgets\ActiveForm;
             'attribute' => 'avatarId',
             'source' => (!is_null($model->avatar)) ? $model->avatar : null,
         ]) ?>
+
+    <?= $form->field($model, 'roles')->widget(BitMask::className(), ['data' => \common\models\User::roleList()]) ?>
 
     <?= $form->field($model, 'passwordHash')->passwordInput() ?>
 

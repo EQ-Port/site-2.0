@@ -17,6 +17,8 @@ use \dosamigos\fileupload\FileUploadUI;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'code')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'previewText')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'fullText')->widget(CKEditor::className(), [

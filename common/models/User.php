@@ -23,6 +23,29 @@ use yii\web\IdentityInterface;
  */
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
+    const ROLE_USER            = 1;
+    const ROLE_PARTNER         = 2;
+    const ROLE_EVENT_MANAGER   = 4;
+    const ROLE_USER_MANAGER    = 8;
+    const ROLE_ARTICLE_MANAGER = 16;
+    const ROLE_MODERATOR       = 32;
+    const ROLE_ADMIN           = 64;
+    const ROLE_ISSUE_MANAGER   = 128;
+
+    public static function roleList()
+    {
+        return [
+            self::ROLE_USER            => Yii::t('roles', 'User'),
+            self::ROLE_PARTNER         => Yii::t('roles', 'Partner'),
+            self::ROLE_EVENT_MANAGER   => Yii::t('roles', 'Event Manager'),
+            self::ROLE_USER_MANAGER    => Yii::t('roles', 'User Manager'),
+            self::ROLE_ARTICLE_MANAGER => Yii::t('roles', 'Article Manager'),
+            self::ROLE_ISSUE_MANAGER   => Yii::t('roles', 'Issue Manager'),
+            self::ROLE_MODERATOR       => Yii::t('roles', 'Moderator'),
+            self::ROLE_ADMIN           => Yii::t('roles', 'Admin'),
+        ];
+    }
+
     /**
      * @inheritdoc
      */
@@ -44,6 +67,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             [['avatarId'], 'integer', 'skipOnEmpty' => true],
             [['firstName', 'lastName'], 'string', 'max' => 50],
             [['passwordHash'], 'safe'],
+            [['roles'], 'integer']
         ];
     }
 
@@ -62,6 +86,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'email'              => Yii::t('app', 'Email'),
             'status'             => Yii::t('app', 'Status'),
             'avatarId'           => Yii::t('app', 'Avatar'),
+            'roles'              => Yii::t('app', 'Roles'),
         ];
     }
 
@@ -159,5 +184,19 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function getAvatar()
     {
         return $this->hasOne(Image::className(), ['id' => 'avatarId']);
+    }
+
+    /**
+     * @param $role
+     *
+     * @return bool
+     */
+    public function hasRole($role)
+    {
+        if (($this->roles & self::ROLE_ADMIN) > 0) {
+            return true;
+        }
+
+        return ($this->roles >= $role) && (($this->roles & $role) > 0);
     }
 }

@@ -26,6 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'previewText:ntext',
             'active:boolean',
+            [
+                'label' => Yii::t('app', 'Author'),
+                'value' => function($model) {
+                        return $model->author->firstName . ' ' . $model->author->lastName;
+                    },
+            ],
             //'activeFrom',
             //'activeTo',
             //'authorId',

@@ -30,6 +30,10 @@ return [
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
+            'suffix' => '/',
+            'rules' => [
+                'article/<code:[a-z0-9\-_]+>' => 'article/detail',
+            ],
         ],
         /*'assetManager' => [
             'converter' => [

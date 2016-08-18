@@ -30,7 +30,7 @@ return [
             'errorAction' => 'site/error',
         ],
         'urlManager' => [
-            //'enablePrettyUrl' => false,
+            'enablePrettyUrl' => true,
         ],
     ],
     'params' => $params,
