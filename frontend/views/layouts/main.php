@@ -54,7 +54,7 @@ AppAsset::register($this);
             array(
                 'items'   => array(
                     array('label' => 'Статьи', 'url' => array('/article')),
-                    array('label' => 'About', 'url' => array('/site/page', 'view' => 'about')),
+                    array('label' => 'Мероприятия', 'url' => array('/event')),
                     array('label' => 'Contact', 'url' => array('/site/contact')),
                     array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::$app->user->isGuest),
                 ),

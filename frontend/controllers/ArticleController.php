@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 
 use common\models\Article;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\HttpException;
 
@@ -11,9 +12,15 @@ class ArticleController extends Controller
 {
     public function actionIndex()
     {
-        $articles = Article::findAll(['active' => true]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => Article::find()->where(['active' => true]),
+            'pagination' => [
+                'pageSize' => 18,
+                'defaultPageSize' => 18,
+            ]
+        ]);
 
-        return $this->render('index', ['articles' => $articles]);
+        return $this->render('index', ['dataProvider' => $dataProvider]);
     }
 
     public function actionDetail($code)

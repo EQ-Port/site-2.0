@@ -32,6 +32,7 @@ return [
             'enablePrettyUrl' => true,
             'suffix' => '/',
             'rules' => [
+                'article' => 'article/index',
                 'article/<code:[a-z0-9\-_]+>' => 'article/detail',
             ],
         ],
