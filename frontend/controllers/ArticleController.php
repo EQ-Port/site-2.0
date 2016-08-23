@@ -10,13 +10,15 @@ use yii\web\HttpException;
 
 class ArticleController extends Controller
 {
+    const ARTICLE_PER_PAGE = 18;
+
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
             'query' => Article::find()->where(['active' => true]),
             'pagination' => [
-                'pageSize' => 18,
-                'defaultPageSize' => 18,
+                'pageSize' => self::ARTICLE_PER_PAGE,
+                'defaultPageSize' => self::ARTICLE_PER_PAGE,
             ]
         ]);
 

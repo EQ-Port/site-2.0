@@ -1,6 +1,19 @@
-<h1><? echo $self['name']; ?></h1>
-<pre>
-<?
-	print "$self[description]<br />$self[place]<br />$self[address]<br />$self[start_date] $self[end_date]<hr>";
+<?php
+use yii\helpers\Html;
+
+$this->title = Html::encode($event->name);
+
+/**
+ * @var \common\models\Event $event
+ */
 ?>
-</pre>
+<h2><?= Html::encode($event->name) ?></h2>
+<div class="preview">
+    <img src="<?= $event->poster->fit(640, 640)->getUrl() ?>" alt="<?= $event->name ?>"/>
+</div>
+<div class="full-text">
+    Начало: <?= $event->startDate ?>
+    <br>
+    Адрес: <?= $event->address ?>
+    <?= $event->description ?>
+</div>

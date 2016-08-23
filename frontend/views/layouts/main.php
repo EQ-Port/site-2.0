@@ -77,7 +77,8 @@ AppAsset::register($this);
         </div>
         <div class="col-xs-12 col-md-3" style="margin-top: 30px;">
             <div class="col-md-12 navigation">
-                <h4>Навигация</h4>
+                <h4>EQ Journal</h4>
+                <?= \frontend\widgets\NewIssue::widget() ?>
             </div>
             <div class="col-md-12 face">
                 <h4>Наши лица</h4>

@@ -2,31 +2,36 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\data\ActiveDataProvider;
+use yii\web\HttpException;
 use yii\web\Request;
 use yii\web\Controller;
 use common\models\Event;
-use common\components\TransliteUrl;
 
 class EventController extends Controller
 {
+    const EVENT_PER_PAGE = 18;
+
     public function actionIndex()
     {
-		$event = new Event;
-		if ( $data = $event->find()->orderBy(['id' => SORT_DESC])->all() ) {
-			echo $this->render('index', array('data' => $data));
-		} else {
-			Yii::$app->response->redirect(array('site/index'));
-		}
+		$dataProvider = new ActiveDataProvider([
+            'query' => Event::find()->orderBy(['startDate' => 'desc']),
+            'pagination' => [
+                'pageSize' => self::EVENT_PER_PAGE,
+                'defaultPageSize' => self::EVENT_PER_PAGE,
+            ],
+        ]);
+
+        return $this->render('index', ['dataProvider' => $dataProvider]);
     }
 	
-	public function actionEvent()
+	public function actionDetail($code)
 	{
-		$code = TransliteUrl::encodeLatin(Yii::$app->request->get('code'));
 		$event = new Event;
-		if ( $data = $event->findOne(array('code'=> $code)) ) {
-			echo $this->render('event', array('self' => $data));
-		} else {
-			Yii::$app->response->redirect(array('site/index'));
+		if ( $event = $event->findOne(array('code'=> $code)) ) {
+			return $this->render('event', array('event' => $event));
 		}
+
+        throw new HttpException(404, 'Такого мероприятия нет');
 	}
 }

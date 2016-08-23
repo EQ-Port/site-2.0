@@ -34,13 +34,15 @@ return [
             'rules' => [
                 'article' => 'article/index',
                 'article/<code:[a-z0-9\-_]+>' => 'article/detail',
+                'event' => 'event/index',
+                'event/<code:[a-z0-9\-_]+>' => 'event/detail',
             ],
         ],
-        /*'assetManager' => [
+        'assetManager' => [
             'converter' => [
                 'class' => 'nizsheanez\assetConverter\Converter'
             ]
-        ],*/
+        ],
     ],
     'params' => $params,
 ];
