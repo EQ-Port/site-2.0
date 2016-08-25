@@ -6,6 +6,7 @@ use common\components\FileHelper;
 use \Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\helpers\VarDumper;
 use yii\web\UploadedFile;
 
 class FileController extends \backend\components\Controller
