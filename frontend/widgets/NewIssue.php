@@ -15,7 +15,12 @@ class NewIssue extends Widget
         /**
          * @var Issue $issue
          */
-        $issue = Issue::find()->orderBy(['announceDate' => 'desc'])->limit(1)->one();
+        $issue = Issue::find()->orderBy('announceDate desc')->limit(1)->one();
+
+        if (is_null($issue)) {
+            return null;
+        }
+
         return Html::img($issue->cover->fit(210, 500)->getUrl())
         . 'С ' . \Yii::$app->formatter->asDate($issue->announceDate, 'd MMMM');
     }

@@ -3,6 +3,10 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'name' => 'Рок-Портал EQUILIBRIUM',
     'components' => [
+        'db' => [
+//            'enableSchemaCache' => true,
+//            'schemaCacheDuration' => 86400,
+        ],
 		'authManager' => [
 			'class' => 'yii\rbac\DbManager',
 			 'defaultRoles' => [

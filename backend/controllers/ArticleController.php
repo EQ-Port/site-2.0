@@ -36,7 +36,7 @@ class ArticleController extends Controller
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Article::find(),
+            'query' => Article::find()->orderBy('id desc'),
         ]);
 
         return $this->render(
