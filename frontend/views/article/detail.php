@@ -8,10 +8,14 @@ use yii\helpers\Html;
  */
 $this->title = $article->name;
 ?>
-<h2><?= Html::encode($article->name) ?></h2>
+<h1><?= Html::encode($article->name) ?></h1>
 <div class="preview">
-    <?= Html::encode($article->previewText) ?>
-    <img src="<?= $article->image->crop(640, 480)->getUrl() ?>" alt="<?= $article->name ?>"/>
+    <blockquote >
+        <?= Html::encode($article->previewText) ?>
+    </blockquote>
+<div class="well-lg">
+    <img src="<?= $article->image->crop(640, 480)->getUrl() ?>" alt="<?= $article->name ?>"/>    
+</div>
 </div>
 <div class="full-text">
     <?= $article->fullText ?>

@@ -1,3 +1,4 @@
+<!--
 <?
 use yii\helpers\Html;
 
@@ -6,8 +7,8 @@ $this->title = "Интересные материалы";
  * @var \yii\data\ActiveDataProvider $dataProvider
  */
 ?>
-
-<h2>Интересные материалы</h2>
+ -->
+<h1>Интересные материалы</h1>
 
 <?=
 \yii\widgets\ListView::widget(
